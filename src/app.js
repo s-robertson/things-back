@@ -22,6 +22,7 @@ const whitelist = app.get('corsWhitelist');
 const corsOptions = {
   origin(origin, callback){
     const originIsWhitelisted = whitelist.indexOf(origin) !== -1;
+    console.log(originIsWhitelisted, 'originIsWhitelisted');
     callback(null, originIsWhitelisted);
   }
 };
