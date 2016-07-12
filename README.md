@@ -2,6 +2,8 @@
 
 > 
 
+[![Build Status](https://travis-ci.org/s-robertson/things-back.svg?branch=master)]
+
 ## About
 
 This project uses [Feathers](http://feathersjs.com). An open source web framework for building modern real-time applications.
