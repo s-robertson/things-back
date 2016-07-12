@@ -1,12 +1,11 @@
 {
   "host": "localhost",
   "port": 9000,
-  "mariadb": "mariadb://things:@localhost/things",
-  "force-sync": true,
+  "mariadb": "DATABASE_URL",
   "auth": {
     "idField": "id",
     "token": {
-      "secret": "your app secret"
+      "secret": "FEATHERS_AUTH_SECRET"
     },
     "local": {},
     "google": {
