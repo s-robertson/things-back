@@ -30,4 +30,5 @@ node_modules
 lib/
 data/
 
-config
+config/production.json
+config/test.json
