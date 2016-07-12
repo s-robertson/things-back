@@ -1,0 +1,24 @@
+{
+  "host": "localhost",
+  "port": 9000,
+  "mariadb": "mariadb://things:@localhost/things",
+  "force-sync": true,
+  "auth": {
+    "idField": "id",
+    "token": {
+      "secret": "your app secret"
+    },
+    "local": {},
+    "google": {
+      "clientID": "your google client id",
+      "clientSecret": "your google client secret",
+      "permissions": {
+        "scope": ["profile"]
+      }
+    }
+  },
+  "corsWhitelist": [
+    "http://localhost:3000",
+    "https://localhost:3000"
+  ]
+}
