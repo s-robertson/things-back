@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "6"
+
+addons:
+  mariadb: '10.0'
+
+before_install:
+  - mysql -e "create database IF NOT EXISTS test;" -uroot
