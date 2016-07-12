@@ -19,7 +19,7 @@
     "test": "npm run jshint && npm run mocha",
     "jshint": "jshint src/. test/. --config",
     "start": "node src/",
-    "mocha": "mocha test/ --recursive"
+    "mocha": "NODE_ENV=test mocha test/ --recursive"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
