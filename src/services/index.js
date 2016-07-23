@@ -1,5 +1,5 @@
 'use strict';
-const games = require('./games');
+const game = require('./game');
 const authentication = require('./authentication');
 const user = require('./user');
 const Sequelize = require('sequelize');
@@ -14,5 +14,5 @@ module.exports = function() {
 
   app.configure(authentication);
   app.configure(user);
-  app.configure(games);
+  app.configure(game);
 };

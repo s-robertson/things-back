@@ -1,14 +1,14 @@
 'use strict';
 
 const service = require('feathers-sequelize');
-const games = require('./games-model');
+const game = require('./game-model');
 const hooks = require('./hooks');
 
 module.exports = function(){
   const app = this;
 
   const options = {
-    Model: games(app.get('sequelize')),
+    Model: game(app.get('sequelize')),
     paginate: {
       default: 5,
       max: 25
@@ -19,11 +19,11 @@ module.exports = function(){
   app.use('/games', service(options));
 
   // Get our initialize service to that we can bind hooks
-  const gamesService = app.service('/games');
+  const gameService = app.service('/games');
 
   // Set up our before hooks
-  gamesService.before(hooks.before);
+  gameService.before(hooks.before);
 
   // Set up our after hooks
-  gamesService.after(hooks.after);
+  gameService.after(hooks.after);
 };

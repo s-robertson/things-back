@@ -1,14 +1,14 @@
 'use strict';
 
-// games-model.js - A sequelize model
-//
+// game-model.js - A sequelize model
+// 
 // See http://docs.sequelizejs.com/en/latest/docs/models-definition/
 // for more of what you can do here.
 
 const Sequelize = require('sequelize');
 
 module.exports = function(sequelize) {
-  const games = sequelize.define('games', {
+  const game = sequelize.define('games', {
     text: {
       type: Sequelize.STRING,
       allowNull: false
@@ -17,5 +17,7 @@ module.exports = function(sequelize) {
     freezeTableName: true
   });
 
-  return games;
+  game.sync();
+
+  return game;
 };
