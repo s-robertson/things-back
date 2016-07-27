@@ -15,8 +15,15 @@ module.exports = function(){
     }
   };
 
+  let gamesService = service(options);
+
+  gamesService.generateCode = function() {
+    // @TODO: write actual code functionality.
+    return '12345';
+  };
+
   // Initialize our service with any options it requires
-  app.use('/games', service(options));
+  app.use('/games', gamesService);
 
   // Get our initialize service to that we can bind hooks
   const gameService = app.service('/games');

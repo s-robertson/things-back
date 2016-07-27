@@ -12,7 +12,11 @@ exports.before = {
   ],
   find: [],
   get: [],
-  create: [],
+  create: [
+    hook => {
+      hook.data.code = hook.app.service('games').generateCode();
+    }
+  ],
   update: [],
   patch: [],
   remove: []

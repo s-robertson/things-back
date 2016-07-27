@@ -8,8 +8,11 @@ const app = require('../src/app');
 
 describe('Things application tests', function() {
   before(function(done) {
-    this.server = app.listen(3030);
-    this.server.once('listening', () => done());
+    app.get('sequelize').sync({ force: app.get('forceDbSync') })
+      .then(() => {
+        this.server = app.listen(3030);
+        this.server.once('listening', () => done());
+      });
   });
 
   after(function(done) {
