@@ -1,23 +1,13 @@
 {
   "host": "localhost",
-  "port": 9000,
-  "mariadb": "DATABASE_URL",
+  "port": "APP_PORT",
+  "mariadb": "DB_URL",
+  "forceDbSync": "DB_FORCE_SYNC",
   "auth": {
     "idField": "id",
     "token": {
       "secret": "FEATHERS_AUTH_SECRET"
     },
-    "local": {},
-    "google": {
-      "clientID": "your google client id",
-      "clientSecret": "your google client secret",
-      "permissions": {
-        "scope": ["profile"]
-      }
-    }
-  },
-  "corsWhitelist": [
-    "http://localhost:3000",
-    "https://localhost:3000"
-  ]
+    "local": {}
+  }
 }

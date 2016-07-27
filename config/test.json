@@ -1,0 +1,5 @@
+{
+  "host": "localhost",
+  "mariadb": "TEST_DB_URL",
+  "forceDbSync": true
+}

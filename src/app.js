@@ -16,7 +16,8 @@ const app = feathers();
 
 app.configure(configuration(path.join(__dirname, '..')));
 
-const whitelist = app.get('corsWhitelist');
+const whitelist = process.env.CORS_WHITELIST.split(" ");
+
 const corsOptions = {
   origin(origin, callback){
     const originIsWhitelisted = whitelist.indexOf(origin) !== -1;

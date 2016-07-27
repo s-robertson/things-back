@@ -1,8 +1,10 @@
 'use strict';
 
+require('dotenv').config();
+
 const app = require('./app');
 
-app.get('sequelize').sync({ force: process.env.DB_FORCE_SYNC })
+app.get('sequelize').sync({ force: app.get('forceDbSync') })
   .then(function() {
     const port = app.get('port');
     const server = app.listen(port);

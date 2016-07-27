@@ -18,7 +18,23 @@ exports.before = {
     auth.restrictToOwner({ ownerField: 'id' })
   ],
   create: [
-    auth.hashPassword()
+    auth.hashPassword(),
+    hook => {
+      return new Promise((resolve, reject) => {
+        const userService = hook.app.service('users');
+
+        userService.find({ email: hook.data.email })
+          .then(user => {
+            if (user) {
+              reject(new Error('A user with that email address already exists.'));
+            }
+            else {
+              resolve();
+            }
+          })
+          .catch(err => reject(err));
+      });
+    }
   ],
   update: [
     auth.verifyToken(),
